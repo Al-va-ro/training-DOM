@@ -1,0 +1,90 @@
+:root {
+  box-sizing: border-box;
+  font-size: 0.875rem;
+  font-family: "Rubik", sans-serif;
+  color {
+    --blue: #0d6efd;
+    --indigo: #6610f2;
+    --purple: #6f42c1;
+    --pink: #d63384;
+    --red: #dc3545;
+    --orange: #fd7e14;
+    --yellow: #ffc107;
+    --green: #198754;
+    --teal: #20c997;
+    --cyan: #0dcaf0;
+    --dark: #292a2b;
+    --green-white: #edf4eb;
+    --white: #fff;
+    --gray: #adb5bd;
+  }
+}
+
+*,
+*::before,
+*::after {
+  padding: 0;
+  margin: 0;
+  border: 0;
+  box-sizing: inherit;
+  outline: 0 none;
+  list-style: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Titillium Web", sans-serif;
+}
+h1 {
+  font-size: 3.5rem;
+}
+
+h2 {
+  font-size: 2.25rem;
+}
+
+h3 {
+  font-size: 1.5rem;
+}
+
+h4 {
+  font-size: 1.1rem;
+}
+
+h5 {
+  font-size: 0.9rem;
+}
+
+h6 {
+  font-size: 0.7rem;
+}
+
+/* Boostrap breakpoints */
+/* Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) {
+  /* here your code */
+}
+
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) {
+  /* here your code */
+}
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+  /* here your code */
+}
+
+/* X-Large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+  /* here your code */
+}
+
+/* XX-Large devices (larger desktops, 1400px and up) */
+@media (min-width: 1400px) {
+  /* here your code */
+}

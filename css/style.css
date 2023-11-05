@@ -39,8 +39,8 @@ div {
   align-items: center;
 }
 
-.betis {
-  background-color: #198754;
+.light {
+  background-color: #ffc107;
   color: #292a2b;
   transition: all 1s ease-in-out;
 }
@@ -50,8 +50,8 @@ div {
   transition: animation 1s ease-in-out;
 }
 
-.sevilla {
-  background-color: #dc3545;
+.dark {
+  background-color: #198754;
   color: white;
   transition: all 1s ease-in-out;
 }

@@ -49,6 +49,47 @@ h1 {
   background-color: white;
 }
 
+.main .header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.btn-group {
+  box-shadow: 0.4px 9px -4px rgba(0, 0, 0, 0.35);
+  position: relative;
+  display: inline-flex;
+  vertical-align: middle;
+}
+
+.btn-primary {
+  background-color: #3b71ca;
+  color: #fff;
+  box-shadow: 0.4px 9px -4px #3b71ca;
+}
+
+.btn {
+  transition: all 0.15s ease-in-out;
+  text-transform: uppercase;
+  vertical-align: bottom;
+  border: 0;
+  box-shadow: 0.4px 9px -4px rgba(0, 0, 0, 0.35);
+  font-weight: 500;
+  padding: 0.625rem 1.5rem 0.5rem;
+  font-size: 0.75rem;
+  line-height: 1.5;
+}
+
+.btn:first-child {
+  border-top-left-radius: 0.25rem;
+  border-bottom-left-radius: 0.25rem;
+}
+
+.btn:last-child {
+  border-top-right-radius: 0.25rem;
+  border-bottom-right-radius: 0.25rem;
+}
+
 .main .container {
   overflow-x: auto;
 }
@@ -205,15 +246,15 @@ h1 {
   color: var(--teal);
 }
 
-.main table .editable{
+.main table .editable {
   background-color: white;
   display: inline-block;
-  padding: .3em;
-  border-radius: .3rem;
-  margin-top: .3em;
+  padding: 0.3em;
+  border-radius: 0.3rem;
+  margin-top: 0.3em;
 }
 
-.main .dismissible{
+.main .dismissible {
   opacity: 0 !important;
   height: 0 !important;
   padding: 0 !important;

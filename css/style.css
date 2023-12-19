@@ -1,74 +1,254 @@
-:root {
-  box-sizing: border-box;
-  font-size: 1.875rem;
-  font-family: "Rubik", sans-serif;
-  color {
-    --blue: #0d6efd;
-    --indigo: #6610f2;
-    --purple: #6f42c1;
-    --pink: #d63384;
-    --red: #dc3545;
-    --orange: #fd7e14;
-    --yellow: #ffc107;
-    --green: #198754;
-    --teal: #20c997;
-    --cyan: #0dcaf0;
-    --dark: #292a2b;
-    --green-white: #edf4eb;
-    --white: #fff;
-    --gray: #adb5bd;
-  }
-}
+/* 
+  Shopping Cart v1.0.0-alpha (<repo URL>)
+  Copyright 2022 CODE SPACE TEAM
+  Licensed under MIT (<repo URL>) 
+*/
 
-*,
-*::before,
-*::after {
-  padding: 0;
-  margin: 0;
-  border: 0;
-  box-sizing: inherit;
-  outline: 0 none;
-  list-style: none;
+@import url("https://fonts.googleapis.com/css2?family=Antic+Slab&family=Comfortaa:wght@500;600&family=Kameron:wght@400;700&family=Pacifico&display=swap");
+
+html {
+  font-size: 0.785rem;
 }
 
 body {
-  background-color: black;
-  display: flex;
-  justify-content: space-around;
+  font-family: "Antic Slab", serif;
+  height: 100vh;
+  padding-top: 11.5rem;
+}
+/* Header */
+.fa-bag-shopping {
+  color: #222222;
+  transform: rotate(25deg);
+}
+.logo {
+  font-size: 1.9rem;
+  color: #ffc107;
+}
+.fa-basket-shopping {
+  color: #fefefe;
+  opacity: 1;
+  transition: all 0.2s ease;
+}
+.fa-basket-shopping:hover {
+  color: #c61a27 !important;
+  opacity: 0.9;
+  -webkit-transform: rotateZ(-30deg);
+  -ms-transform: rotateZ(-30deg);
+  transform: rotateZ(-30deg);
+}
+/* Modals */
+button.close:focus {
+  outline: none;
+}
+/* shopping cart animation */
+@-webkit-keyframes hvr-pulse {
+  25% {
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
+  }
+  75% {
+    -webkit-transform: scale(0.9);
+    transform: scale(0.9);
+  }
+}
+@keyframes hvr-pulse {
+  25% {
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
+  }
+  75% {
+    -webkit-transform: scale(0.9);
+    transform: scale(0.9);
+  }
+}
+.hvr-pulse {
+  display: inline-block;
+  vertical-align: middle;
+  -webkit-transform: perspective(1px) translateZ(0);
+  transform: perspective(1px) translateZ(0);
+  -webkit-animation-name: hvr-pulse;
+  animation-name: hvr-pulse;
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-timing-function: linear;
+  animation-timing-function: linear;
+  -webkit-animation-iteration-count: infinite;
+  animation-iteration-count: infinite;
+}
+h4,
+h5.modal-title {
+  font-family: "Comfortaa", cursive;
+}
+h5 {
+  font-family: "Pacifico", cursive;
+}
+/* Product cards */
+.card-deck .card {
+  width: 100%;
+  transition: all 0.2s ease;
+}
+.card-deck .card:hover {
+  box-shadow: 1px 1px #53a7ea, 2px 2px #53a7ea, 3px 3px #53a7ea;
+  -webkit-transform: translateX(-3px);
+  transform: translateX(-3px);
 }
 
-div {
-  width: 300px;
-  height: 300px;
-  margin-top: 5%;
+.pricing-card-title {
+  font-family: "Kameron", serif;
 }
 
-div:last-of-type {
-  background-color: var(--blue);
+.table td {
+  vertical-align: middle !important;
 }
 
-/* Boostrap breakpoints */
-/* Small devices (landscape phones, 576px and up) */
+td .card {
+  max-width: 8rem;
+  margin:auto;
+}
+
+td button span {
+  font-size: 1.3em;
+  font-weight: bolder;
+}
+#cartPurchased,
+#addedToCart,
+#alreadyAddedToCart {
+  font-size: 1.5em;
+}
+#cartPurchased .modal-content {
+  background-color: #d4edda;
+}
+#addedToCart .modal-content {
+  background-color: #d1ecf1;
+}
+#alreadyAddedToCart .modal-content {
+  background-color: #fff3cd;
+}
+
+/* Quantity selectors */
+.quantity {
+  position: relative;
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+.quantity input {
+  width: 6rem;
+  height: 4rem;
+  line-height: 1.65;
+  float: left;
+  display: block;
+  padding: 0;
+  margin: 0;
+  padding-left: 20px;
+  border: 1px solid #eee;
+  font-size: 16px;
+  font-weight: bolder;
+}
+
+.quantity input:focus {
+  outline: 0;
+}
+
+.quantity-nav {
+  float: left;
+  position: relative;
+  height: 4rem;
+}
+
+.quantity-button {
+  position: relative;
+  cursor: pointer;
+  border-left: 1px solid #eee;
+  width: 2rem;
+  text-align: center;
+  color: #333;
+  font-size: 16px;
+  font-weight: bolder;
+  line-height: 1.7;
+  -webkit-transform: translateX(-100%);
+  transform: translateX(-100%);
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -o-user-select: none;
+  user-select: none;
+}
+
+.quantity-button.quantity-up {
+  position: absolute;
+  height: 50%;
+  top: 0;
+  border-bottom: 1px solid #eee;
+}
+
+.quantity-button.quantity-down {
+  position: absolute;
+  bottom: -1px;
+  height: 50%;
+}
+
+.disabled {
+  pointer-events: none;
+  cursor: default;
+  text-decoration: none;
+  opacity: 0.3;
+}
+/* Footer */
+footer {
+  font-size: 1.2rem;
+}
+.date {
+  color: #dc3545;
+  padding-left: 0.3em;
+  font-weight: bold;
+  font-style: italic;
+}
+/* Tablet devices */
 @media (min-width: 576px) {
-  /* here your code */
+  body {
+    padding-top: 8.5rem;
+  }
+  .card-deck .card {
+    max-width: 45%;
+  }
+  footer {
+    font-size: 1.5rem;
+  }
 }
-
-/* Medium devices (tablets, 768px and up) */
+/* Laptop devices */
 @media (min-width: 768px) {
-  /* here your code */
+  body {
+    padding-top: 5.5rem;
+  }
+  .card-deck .card {
+    max-width: 30%;
+  }
+  footer {
+    font-size: 1.8rem;
+  }
 }
-
-/* Large devices (desktops, 992px and up) */
+/* Desktop */
 @media (min-width: 992px) {
-  /* here your code */
+  html {
+    font-size: 1.285rem;
+  }
+  .modal-footer{
+  
+    font-size: 1.8rem;
+  }
 }
-
-/* X-Large devices (large desktops, 1200px and up) */
+/* Large devices */
 @media (min-width: 1200px) {
-  /* here your code */
-}
-
-/* XX-Large devices (larger desktops, 1400px and up) */
-@media (min-width: 1400px) {
-  /* here your code */
+  .card-deck .card {
+    max-width: 22%;
+  }
 }
